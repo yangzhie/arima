@@ -1,4 +1,4 @@
-package com.yanzghie.arima;
+package com.yangzhie.arima;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

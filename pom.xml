@@ -8,7 +8,7 @@
 		<version>3.5.7</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.yanzghie</groupId>
+	<groupId>com.yangzhie</groupId>
 	<artifactId>arima</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>arima</name>
