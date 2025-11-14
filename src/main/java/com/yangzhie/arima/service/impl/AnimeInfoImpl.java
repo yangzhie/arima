@@ -7,9 +7,10 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import com.yangzhie.arima.repository.fetch.FetchAnimeInfo;
+import com.yangzhie.arima.service.AnimeInfoService;
 import com.yangzhie.arima.util.Helper;
 
-public class AnimeInfoImpl {
+public class AnimeInfoImpl implements AnimeInfoService {
     public JSONObject getAnimeInfo() {
         // Helper methods
         Helper helper = new Helper();
