@@ -5,14 +5,20 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class FetchAnimeInfo {
-    public String fetchAnimeInfo() {
+    public String fetchAnimeInfo(String animeId) {
         // Create HTTP client
         HttpClient client = HttpClient.newHttpClient();
 
+        // Create URL string
+        String url = "https://api.jikan.moe/v4/anime/" + animeId;
+
         // Create GET request
         HttpRequest request = HttpRequest.newBuilder()
-            .uri(URI.create("https://api.jikan.moe/v4/anime/5114"))
+            .uri(URI.create(url))
             .GET()
             .build();
     

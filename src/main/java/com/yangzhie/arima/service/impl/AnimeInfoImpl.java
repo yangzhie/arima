@@ -5,19 +5,26 @@ import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+import org.springframework.stereotype.Service;
 
 import com.yangzhie.arima.repository.fetch.FetchAnimeInfo;
 import com.yangzhie.arima.service.AnimeInfoService;
 import com.yangzhie.arima.util.Helper;
 
+@Service // 
 public class AnimeInfoImpl implements AnimeInfoService {
-    public JSONObject getAnimeInfo() {
+    private final FetchAnimeInfo fetchAnimeInfo;
+
+    public AnimeInfoImpl(FetchAnimeInfo fetchAnimeInfo) {
+        this.fetchAnimeInfo = fetchAnimeInfo;
+    }
+
+    public JSONObject getAnimeInfo(String animeId) {
         // Helper methods
         Helper helper = new Helper();
 
         // Fetch anime info
-        FetchAnimeInfo fetcher = new FetchAnimeInfo();
-        String animeInfo = fetcher.fetchAnimeInfo();
+        String animeInfo = fetchAnimeInfo.fetchAnimeInfo(animeId);
 
         // Return object
         JSONObject result = new JSONObject();
